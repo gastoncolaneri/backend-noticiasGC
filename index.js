@@ -19,7 +19,8 @@ app.get("/", (req, res) => {
 
   request(options, (error, response, body) => {
     if (!error && response.statusCode == 200) {
-      res.send(body);
+      const parser = JSON.parse(body);
+      res.send(parser);
     }
   });
 });
