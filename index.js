@@ -5,8 +5,8 @@ const app = express();
 const port = process.env.PORT || 5050;
 
 app.get("/", (req, res) => {
-  const country = req.params.country || "ar";
-  const type = req.params.type || "business";
+  const country = req.query.country || "ar";
+  const type = req.query.type || "business";
   const urlNews = `https://newsapi.org/v2/top-headlines?country=${country}&category=${type}&apiKey=e3b5b11d4944459fac8192812ab214c4&sortBy=publishedAt`;
 
   const options = {
